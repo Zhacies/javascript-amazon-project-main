@@ -64,7 +64,6 @@ document.querySelector('.js-products-grid')
 
 
 
-
   function updateCartQuantity(){
  let cartQuantity = 0;
 
