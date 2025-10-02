@@ -1,3 +1,4 @@
+import {cart} from '../data/cart.js'; // 'as' to rename cart
 
 let productsHTML = '';
 
