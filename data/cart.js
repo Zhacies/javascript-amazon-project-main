@@ -7,7 +7,7 @@ export const cart= [{
 }];
 
 
-export function addToCart (productId){
+export function addToCart(productId){
      let matchingItem;
 
    cart.forEach((cartItem)=>{
