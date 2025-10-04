@@ -6,7 +6,6 @@ export let cart= [{
   quantity: 1
 }];
 
-
 export function addToCart(productId){
      let matchingItem;
 
@@ -28,7 +27,7 @@ export function addToCart(productId){
   }
 
 
-  function removeFromCart(productId){
+ export function removeFromCart(productId){
     const newCart = [];
 
     cart.forEach((cartItem)=> {
@@ -37,4 +36,4 @@ export function addToCart(productId){
       }
     });
     cart = newCart;
-  };
+  }
