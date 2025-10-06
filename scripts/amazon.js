@@ -2,6 +2,9 @@ import {cart, addToCart} from '../data/cart.js'; // 'as' to rename cart
 import {products} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 // use import * as nameVariable from '../data/cart.js' access all in that file
+
+
+
 let productsHTML = '';
 
 products.forEach( (product) =>{
