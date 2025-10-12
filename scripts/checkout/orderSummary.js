@@ -1,8 +1,8 @@
 import {cart, removeFromCart, updateDeliveryOptions} from '../../data/cart.js';
-import {products} from '../../data/products.js';
+import {products,getProduct} from '../../data/products.js';
 import {formatCurrency} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-import {deliveryOptions}from '../../data/deliveryOption.js';
+import {deliveryOptions,getDeliveryOption}from '../../data/deliveryOption.js';
 
 const today = dayjs();
 const deliveryDate = today.add(7,'days');
@@ -15,22 +15,14 @@ export function renderOrderSummary(){
     cart.forEach( (cartItem) => {
     const productId = cartItem.productId;
 
-    let matchingProduct;
+    const matchingProduct = getProduct(productId);
 
-    products.forEach((product) => {
-      if(product.id === productId){
-        matchingProduct = product;
-      }
-    });
+
 
     const deliveryOptionId = cartItem.deliveryOptionId;
 
-    let deliveryOption;
-      /*                                     deliverID       cartID     */
-    deliveryOptions.forEach((option)=>{ if(option.id === deliveryOptionId)
-    {deliveryOption = option};
-    });
-
+    const deliveryOption = getDeliveryOption(deliveryOptionId);
+ 
 
     const today = dayjs();// get the library
     // save it and add which date (deliveryDays) from object we create
